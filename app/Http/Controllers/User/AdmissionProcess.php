@@ -24,6 +24,7 @@ class AdmissionProcess extends Controller
 
         if($request->documentation_completed == true) {
             $documentation_completed = 1;
+            $user->status = "Admitido";
         }
 
         $user->documentation_completed = $documentation_completed;
