@@ -25,6 +25,35 @@ class AdmissionProcess extends Controller
         if($request->documentation_completed == true) {
             $documentation_completed = 1;
             $user->status = "Admitido";
+
+            //Notificar programación de la prueba
+            $user->quiz_date = \Carbon\Carbon::now()->addDays(2);
+
+        }
+
+        $user->documentation_completed = $documentation_completed;
+        $user->update();
+
+		return response()->json($user);
+    }
+
+    public function requestFilesByEmail(Request $request)
+    {
+        $user = User::where('document_number', $request->id)->first();
+        $status = "Pendiente de pago";
+
+        if($user->documentation_completed == true) {
+            $status = "Admitido";
+        }
+
+        $user->status = $status;
+        $user->documentation_needed = $request->requiredFiles;
+
+        $documentation_completed = 0;
+
+        if($request->documentation_completed == true) {
+            $documentation_completed = 1;
+            $user->status = "Admitido";
         }
 
         $user->documentation_completed = $documentation_completed;

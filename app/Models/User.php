@@ -32,7 +32,11 @@ class User extends Authenticatable
         'documentation_needed',
         'quiz_date',
         'interview_date',
-        'documentation_completed'
+        'documentation_completed',
+        'test_score',
+        'payment_status',
+        'interview_passed',
+        'accept_quota'
     ];
 
     /**

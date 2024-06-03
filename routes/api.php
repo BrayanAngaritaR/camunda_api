@@ -12,6 +12,7 @@ Route::get('/user', function (Request $request) {
 Route::get('/status', [RegisterController::class, 'show']);
 Route::post('/create-account', [RegisterController::class, 'store']);
 Route::post('/request-files', [AdmissionProcess::class, 'requestFiles']);
+Route::post('/request-files-by-email', [AdmissionProcess::class, 'requestFilesByEmail']);
 
 // El sistema le notifica que quedó registrado.
 // La persona ingresa al mismo sitio para terminar de cargar la documentación.
