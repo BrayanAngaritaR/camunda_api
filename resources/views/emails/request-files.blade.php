@@ -1,0 +1,1 @@
+Hola {{ $name }}, queremos informarte que es necesario que cargues los documentos solicitados en la plataforma para continuar con el proceso. ¡Feliz día!

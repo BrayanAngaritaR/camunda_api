@@ -1,0 +1,1 @@
+Hola {{ $name }}, el pago de tus derechos de inscripción aún sale como "Pendiente". Por favor ingresa a la plataforma y realiza el pago.

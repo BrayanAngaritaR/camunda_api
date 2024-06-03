@@ -1,0 +1,1 @@
+Hola {{ $name }}, Queremos darte la bienveida a la Pontificia Universidad Javeriana. Ahora harás parte de la comunidad Javeriana.
