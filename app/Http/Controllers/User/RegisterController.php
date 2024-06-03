@@ -74,13 +74,7 @@ class RegisterController extends Controller
 		$url = url()->full();
 		$id = Str::after($url, 'id=');
 		$user = User::where('document_number', $id)->first();
-
-		if($user){
-			return response()->json($user);
-		}
-
-		return null;
-		
+		return response()->json($user);
 	}
 
 	public function showDocuments()
