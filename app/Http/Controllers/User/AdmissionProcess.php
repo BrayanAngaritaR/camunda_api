@@ -103,8 +103,13 @@ class AdmissionProcess extends Controller
 	public function saveInterviewResult(Request $request)
 	{
 		$user = User::where('document_number', $request->id)->first();
-		$user->interview_passed = $request->interviewPassed;
-		$user->update();
+		$interviewPassed = false;
+
+		if ($request->interviewPassed == true) {
+			$interviewPassed = true;
+			$user->interview_passed = $interviewPassed;
+			$user->update();
+		}
 
 		return response()->json($user);
 	}
