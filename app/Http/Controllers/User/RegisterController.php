@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
@@ -24,6 +25,24 @@ class RegisterController extends Controller
 		]);
 
 		return response()->json($user);
+	}
+
+	public function webStore(Request $request){
+
+		$user = User::create([
+			'name' => $request->name,
+			'email' => $request->email,
+			'password' => Hash::make($request->password),
+			'document_type' => $request->document_type,
+			'document_number' => $request->document_number,
+			'phone' => $request->phone,
+			'birthdate' => $request->birthdate,
+			'gender' => $request->gender,
+		]);
+		
+		Auth::login($user);
+
+
 	}
 
 	public function show()
