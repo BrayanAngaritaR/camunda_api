@@ -14,8 +14,7 @@ class RegisterController extends Controller
 {
 	public function store(Request $request)
 	{
-		if($request->college_degree === 'Ingeniería informática' || $request->college_degree === 'Ingeniería de software' || $request->college_degree === 'Ingeniería de sistemas' || $request->college_degree === 'Administración de empresas')
-		{
+		if ($request->college_degree === 'Ingeniería informática' || $request->college_degree === 'Ingeniería de software' || $request->college_degree === 'Ingeniería de sistemas' || $request->college_degree === 'Administración de empresas') {
 			$canApply = 'yes';
 		} else {
 			$canApply = 'no';
@@ -42,8 +41,7 @@ class RegisterController extends Controller
 
 	public function webStore(Request $request)
 	{
-		if($request->college_degree === 'Ingeniería informática' || $request->college_degree === 'Ingeniería de software' || $request->college_degree === 'Ingeniería de sistemas' || $request->college_degree === 'Administración de empresas')
-		{
+		if ($request->college_degree === 'Ingeniería informática' || $request->college_degree === 'Ingeniería de software' || $request->college_degree === 'Ingeniería de sistemas' || $request->college_degree === 'Administración de empresas') {
 			$canApply = 'yes';
 		} else {
 			$canApply = 'no';
@@ -86,5 +84,24 @@ class RegisterController extends Controller
 		$user = User::where('document_number', $id)->first();
 		$documents = Document::where('user_id', $user->id)->first();
 		return response()->json($documents);
+	}
+
+	public function logout()
+	{
+		Auth::logout();
+		return redirect()->route('user.home');
+	}
+
+	public function login(Request $request)
+	{
+		$credentials = $request->validate([
+			'email' => ['required', 'email'],
+			'password' => ['required'],
+		]);
+
+		if (Auth::attempt($credentials)) {
+			$request->session()->regenerate();
+			return redirect()->route('user.panel.index');
+		}
 	}
 }

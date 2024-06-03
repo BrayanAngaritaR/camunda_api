@@ -20,14 +20,16 @@ Route::post('/notify-interview', [AdmissionProcess::class, 'notifyInterview']);
 Route::post('/save-interview-results', [AdmissionProcess::class, 'saveInterviewResult']);
 Route::post('/notify-rejection', [AdmissionProcess::class, 'notifyRejection']);
 Route::post('/update-quota', [AdmissionProcess::class, 'updateQuota']);
-Route::get('/check-quota', [AdmissionProcess::class, 'checkQuota']);
+// Route::get('/check-quota', [AdmissionProcess::class, 'checkQuota']);
 
 
 
 
 // El sistema le notifica que quedó registrado.
 // La persona ingresa al mismo sitio para terminar de cargar la documentación.
+// El sistema simula que el usuario realiza el pago de la inscripción
 // El sistema notifica que debe presentar una prueba
-// El usuario presenta la prueba
-// El usuario debe seleccionar una fecha de entrevista
-// 
+// El sistema simula que el usuario presenta la prueba
+// El sistema notifica al usuario que debe realizar una entrevista
+// El sistema simula que el usuario realiza el pago de la matrícula
+// El sistema simula que el usuario decide RECHAZAR o ACEPTAR el cupo
