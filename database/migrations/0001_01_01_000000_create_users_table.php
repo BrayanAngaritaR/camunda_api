@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('gender')->default('none');
             $table->string('status')->default('Nuevo');
             $table->string('college_degree')->default('Ingeniería informática');
+            $table->string('can_apply')->default('yes');
             $table->rememberToken();
             $table->timestamps();
         });
