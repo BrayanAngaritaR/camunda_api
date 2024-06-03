@@ -82,7 +82,7 @@
                            </div>
 
                            <div class="form-group my-1">
-                              <label for="gender">Tipo de documento</label>
+                              <label for="gender">Género</label>
                               <select name="gender" id="gender" class="form-select">
                                  <option value="Male" selected>Hombre</option>
                                  <option value="Female">Mujer</option>
