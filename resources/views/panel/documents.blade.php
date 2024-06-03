@@ -1,6 +1,10 @@
 @extends('panel.app')
 @section('content')
 <div class="row">
+   <a href="{{ route('user.panel.documents.create') }}" class="mt-3 mb-5 btn btn-outline-dark">
+      Subir documento
+   </a>
+
    <div class="col-sm-12 my-auto">
       <div class="card">
          <h3 class="m-3">Información personal</h3>
