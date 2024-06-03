@@ -14,7 +14,11 @@ class CheckAdmissionProcess extends Controller
 {
 	public function index()
 	{
-		return view('panel.index');
+		if(Auth::check()){
+			return view('panel.index');
+		} else {
+			return redirect()->route('login');
+		}
 	}
 
 	public function documents()
