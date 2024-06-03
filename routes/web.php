@@ -12,3 +12,4 @@ Route::post('/create-account', [RegisterController::class, 'webStore'])->name('c
 Route::get('/mi-cuenta', [CheckAdmissionProcess::class, 'index'])->name('user.panel.index');
 Route::get('/mis-documentos', [CheckAdmissionProcess::class, 'documents'])->name('user.panel.documents');
 Route::get('/mis-documentos/create', [CheckAdmissionProcess::class, 'documentCreate'])->name('user.panel.documents.create');
+Route::post('/mis-documentos/create', [CheckAdmissionProcess::class, 'uploadFile'])->name('user.panel.documents.store');

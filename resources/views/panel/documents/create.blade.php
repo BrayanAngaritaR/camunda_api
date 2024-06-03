@@ -7,7 +7,7 @@
 
    <div class="col-sm-12 my-auto">
       <div class="card">
-         <form action="">
+         <form action="{{ route('user.panel.documents.store') }}" enctype="multipart/form-data" method="POST">
             @csrf
             <div class="m-3">
                <label for="formFile" class="form-label">Tipo de archivo</label>
