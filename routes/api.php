@@ -8,5 +8,12 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::get('/status/{id}', [RegisterController::class, 'show']);
+Route::get('/status', [RegisterController::class, 'show']);
 Route::post('/create-account', [RegisterController::class, 'store']);
+
+// El sistema le notifica que quedó registrado.
+// La persona ingresa al mismo sitio para terminar de cargar la documentación.
+// El sistema notifica que debe presentar una prueba
+// El usuario presenta la prueba
+// El usuario debe seleccionar una fecha de entrevista
+// 

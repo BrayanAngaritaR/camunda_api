@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -25,8 +26,10 @@ class RegisterController extends Controller
 		return response()->json($user);
 	}
 
-	public function show($id)
+	public function show()
 	{
+		$url = url()->full();
+		$id = Str::after($url, 'id=');
 		$user = User::where('document_number', $id)->first();
 		return response()->json($user);
 	}
