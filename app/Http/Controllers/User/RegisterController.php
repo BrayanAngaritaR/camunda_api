@@ -77,6 +77,9 @@ class RegisterController extends Controller
 		$id = Str::after($url, 'id=');
 		$user = User::where('document_number', $id)->first();
 		$documents = Document::where('user_id', $user->id)->first();
-		return response()->json([$user, $documents]);
+		return response()->json([
+			'user' => $user, 
+			'documents' => $documents
+		]);
 	}
 }
