@@ -19,7 +19,14 @@ class AdmissionProcess extends Controller
 
         $user->status = $status;
         $user->documentation_needed = $request->requiredFiles;
-        $user->documentation_completed = $request->documentation_completed;
+
+        $documentation_completed = 0;
+
+        if($request->documentation_completed == true) {
+            $documentation_completed = 1;
+        }
+
+        $user->documentation_completed = $documentation_completed;
         $user->update();
 
 		return response()->json($user);
