@@ -28,6 +28,7 @@ return new class extends Migration
             $table->text('documentation_needed')->nullable();
             $table->date('quiz_date')->nullable();
             $table->date('interview_date')->nullable();
+            $table->boolean('documentation_completed')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });
