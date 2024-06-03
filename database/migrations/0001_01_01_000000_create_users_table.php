@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('phone')->unique();
             $table->date('birthdate');
             $table->string('gender')->default('none');
+            $table->string('status')->default('Nuevo');
             $table->rememberToken();
             $table->timestamps();
         });

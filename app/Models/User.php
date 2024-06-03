@@ -24,7 +24,8 @@ class User extends Authenticatable
         'document_number',
         'phone',
         'birthdate',
-        'gender'
+        'gender',
+        'status'
     ];
 
     /**
