@@ -107,7 +107,7 @@ class AdmissionProcess extends Controller
 		$user = User::where('document_number', $request->id)->first();
 		$interviewPassed = false;
 
-		if ($request->interviewPassed == true) {
+		if ($request->interviewPassed == true || $request->interviewPassed == 1 || $request->interviewPassed == "1") {
 			$interviewPassed = 'yes';
 			$user->interview_passed = $interviewPassed;
 			$user->update();

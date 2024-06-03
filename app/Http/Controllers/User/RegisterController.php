@@ -14,9 +14,17 @@ class RegisterController extends Controller
 {
 	public function store(Request $request)
 	{
+		if($request->college_degree === 'Ingeniería informática' || $request->college_degree === 'Ingeniería de software' || $request->college_degree === 'Ingeniería de sistemas' || $request->college_degree === 'Administración de empresas')
+		{
+			$canApply = 'yes';
+		} else {
+			$canApply = 'no';
+		}
+
 		$user = User::create([
 			'name' => $request->name,
 			'email' => $request->email,
+			'can_apply' => $canApply,
 			'password' => Hash::make($request->password),
 			'document_type' => $request->document_type,
 			'document_number' => $request->document_number,
@@ -32,17 +40,26 @@ class RegisterController extends Controller
 		return response()->json($user);
 	}
 
-	public function webStore(Request $request){
+	public function webStore(Request $request)
+	{
+		if($request->college_degree === 'Ingeniería informática' || $request->college_degree === 'Ingeniería de software' || $request->college_degree === 'Ingeniería de sistemas' || $request->college_degree === 'Administración de empresas')
+		{
+			$canApply = 'yes';
+		} else {
+			$canApply = 'no';
+		}
 
 		$user = User::create([
 			'name' => $request->name,
 			'email' => $request->email,
+			'can_apply' => $canApply,
 			'password' => Hash::make($request->password),
 			'document_type' => $request->document_type,
 			'document_number' => $request->document_number,
 			'phone' => $request->phone,
 			'birthdate' => $request->birthdate,
 			'gender' => $request->gender,
+			'college_degree' => $request->college_degree
 		]);
 
 		Auth::login($user);

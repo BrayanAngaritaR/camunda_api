@@ -69,6 +69,19 @@
                            </div>
 
                            <div class="form-group my-1">
+                              <label for="college_degree">Carrera que cursaste</label>
+                              <select name="college_degree" id="college_degree" class="form-select">
+                                 <option value="Ingeniería informática" selected>Ingeniería informática</option>
+                                 <option value="Ingeniería de sistemas">Ingeniería de sistemas</option>
+                                 <option value="Ingeniería de software">Ingeniería de software</option>
+                                 <option value="Administración de empresas">Administración de empresas</option>
+                                 <option value="Medicina">Medicina</option>
+                                 <option value="Derecho">Derecho</option>
+                                 <option value="Veterinaria">Veterinaria</option>
+                              </select>
+                           </div>
+
+                           <div class="form-group my-1">
                               <label for="gender">Tipo de documento</label>
                               <select name="gender" id="gender" class="form-select">
                                  <option value="Male" selected>Hombre</option>
