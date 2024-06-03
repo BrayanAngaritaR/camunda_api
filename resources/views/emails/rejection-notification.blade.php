@@ -1,0 +1,1 @@
+Hola {{ $name }}, lamentamos informarte que tu solicitud ha sido rechazada. Ingresa a la plataforma para conocer el motivo.

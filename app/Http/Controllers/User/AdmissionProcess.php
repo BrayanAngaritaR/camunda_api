@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Mail\NotifyRejection;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class AdmissionProcess extends Controller
 {
@@ -77,6 +79,8 @@ class AdmissionProcess extends Controller
 		$user->status = "Rechazado";
 		$user->application_feedback = "Lo sentimos, no pasaste la entrevista. Por lo tanto, hemos decidido rechazar tu solicitud.";
 		$user->update();
+
+		Mail::to($user->email)->send(new NotifyRejection($user->name));
 
 		return response()->json($user);
 	}
