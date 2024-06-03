@@ -10,6 +10,7 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::get('/status', [RegisterController::class, 'show']);
+Route::get('/documents-status', [RegisterController::class, 'showDocuments']);
 Route::post('/create-account', [RegisterController::class, 'store']);
 Route::post('/request-files', [AdmissionProcess::class, 'requestFiles']);
 Route::post('/send-rejection', [AdmissionProcess::class, 'sendRejection']);
