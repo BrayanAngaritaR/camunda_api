@@ -85,6 +85,7 @@ class AdmissionProcess extends Controller
 	{
 		$user = User::where('document_number', $request->id)->first();
 		$user->status = "Rechazado";
+		$user->test_score = $request->testScore;
 		$user->application_feedback = "Hemos decidido rechazar tu solicitud debido a que no superaste la prueba de admisión";
 		$user->update();
 
@@ -95,6 +96,7 @@ class AdmissionProcess extends Controller
 	{
 		$user = User::where('document_number', $request->id)->first();
 		$user->interview_date = \Carbon\Carbon::now();
+		$user->test_score = $request->testScore;
 		$user->update();
 
 		return response()->json($user);
