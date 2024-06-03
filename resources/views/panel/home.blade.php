@@ -33,7 +33,7 @@
          </div>
 
          <div class="card mt-2">
-            <div class="card-header">Aspirantes rechazados</div>
+            <div class="card-header">Aspirantes no admitidos</div>
             <div class="card-body">
                <h1>{{ $rejectedUsers }} / {{ $totalUsers }}</h1>
             </div>
