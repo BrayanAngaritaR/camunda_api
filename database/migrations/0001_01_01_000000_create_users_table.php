@@ -32,7 +32,7 @@ return new class extends Migration
             $table->integer('test_score')->default(200);
             $table->string('payment_status')->default('Pendiente');
             $table->string('interview_passed')->default('no');
-            $table->string('accept_quota')->default(false);
+            $table->string('accept_quota')->default('no');
             $table->rememberToken();
             $table->timestamps();
         });
