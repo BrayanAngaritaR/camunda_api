@@ -70,6 +70,8 @@ class AdmissionProcess extends Controller
 		$user->application_feedback = $request->rejectionReason;
 		$user->update();
 
+		Mail::to($user->email)->send(new NotifyRejection($user->name));
+
 		return response()->json($user);
 	}
 
