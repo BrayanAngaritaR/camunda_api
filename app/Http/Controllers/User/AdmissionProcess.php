@@ -106,7 +106,7 @@ class AdmissionProcess extends Controller
 		$interviewPassed = false;
 
 		if ($request->interviewPassed == true) {
-			$interviewPassed = true;
+			$interviewPassed = 'yes';
 			$user->interview_passed = $interviewPassed;
 			$user->update();
 		}
