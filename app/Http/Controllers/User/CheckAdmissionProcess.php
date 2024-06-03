@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\Base\Document;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
@@ -15,6 +16,7 @@ class CheckAdmissionProcess extends Controller
 	public function index()
 	{
 		if(Auth::check()){
+			App::setlocale('es');
 			return view('panel.index');
 		} else {
 			return redirect()->route('user.login');
