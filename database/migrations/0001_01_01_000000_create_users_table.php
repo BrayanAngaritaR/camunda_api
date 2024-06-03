@@ -24,6 +24,10 @@ return new class extends Migration
             $table->string('status')->default('Nuevo');
             $table->string('college_degree')->default('Ingeniería informática');
             $table->string('can_apply')->default('yes');
+            $table->text('application_feedback')->nullable();
+            $table->text('documentation_needed')->nullable();
+            $table->date('quiz_date')->nullable();
+            $table->date('interview_date')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
