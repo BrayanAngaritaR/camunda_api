@@ -24,7 +24,7 @@ class DashboardController extends Controller
 
         $totalUsers = User::count();
         $pendingPayments = User::where('payment_status', 'Pendiente')->count();
-        $allowedUsers = User::where('status', 'Admitidos')->count();
+        $allowedUsers = User::where('status', 'Admitido')->count();
         $rejectedUsers = User::where('application_feedback', '!=', null)->count();
 
         return view('panel.home', compact('usersByMonth', 'pendingPayments', 'totalUsers', 'allowedUsers', 'rejectedUsers'));
