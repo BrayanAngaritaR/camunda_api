@@ -119,7 +119,8 @@ class AdmissionProcess extends Controller
 	public function updateQuota(Request $request)
 	{
 		$user = User::where('document_number', $request->id)->first();
-		$user->accept_quota = rand(0, 1);
+		$user->accept_quota = rand(0, 1) ? 'yes' : 'no';
+
 		$user->update();
 
 		return response()->json($user);
