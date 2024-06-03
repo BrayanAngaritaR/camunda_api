@@ -17,7 +17,7 @@ class CheckAdmissionProcess extends Controller
 		if(Auth::check()){
 			return view('panel.index');
 		} else {
-			return redirect()->route('login');
+			return redirect()->route('user.login');
 		}
 	}
 

@@ -32,7 +32,7 @@ class DashboardController extends Controller
 			return view('panel.home', compact('usersByMonth', 'pendingPayments', 'totalUsers', 'allowedUsers', 'rejectedUsers'));
 		}
 
-		return redirect()->route('login');
+		return redirect()->route('user.login');
 		
 	}
 }
