@@ -25,7 +25,14 @@ class User extends Authenticatable
         'phone',
         'birthdate',
         'gender',
-        'status'
+        'status',
+        'college_degree',
+        'can_apply',
+        'application_feedback',
+        'documentation_needed',
+        'quiz_date',
+        'interview_date',
+        'documentation_completed'
     ];
 
     /**
