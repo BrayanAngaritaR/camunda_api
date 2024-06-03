@@ -32,8 +32,8 @@
                 </a>
               </li>
 
-              <li class="nav-item mt-5">
-               <a class="nav-link active" href="{{ route('user.panel.index') }}">
+              <li class="nav-item">
+               <a class="nav-link active" href="{{ route('user.panel.documents') }}">
                  <span data-feather="home"></span>
                  Mis documentos</span>
                </a>
