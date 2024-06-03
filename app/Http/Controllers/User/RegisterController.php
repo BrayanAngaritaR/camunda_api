@@ -79,7 +79,7 @@ class RegisterController extends Controller
 			return response()->json($user);
 		}
 
-		return 0;
+		return response()->json(["id" => 0]);
 	}
 
 	public function showDocuments()
