@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Base\Document;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -24,6 +25,10 @@ class RegisterController extends Controller
 			'gender' => $request->gender,
 		]);
 
+		$document = Document::create([
+			'user_id' => $user->id,
+		]);
+
 		return response()->json($user);
 	}
 
@@ -39,10 +44,14 @@ class RegisterController extends Controller
 			'birthdate' => $request->birthdate,
 			'gender' => $request->gender,
 		]);
-		
+
 		Auth::login($user);
 
+		$document = Document::create([
+			'user_id' => $user->id,
+		]);
 
+		return redirect()->route('user.panel.index');
 	}
 
 	public function show()

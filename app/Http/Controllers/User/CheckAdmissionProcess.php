@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Base\Document;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CheckAdmissionProcess extends Controller
 {
@@ -14,7 +16,8 @@ class CheckAdmissionProcess extends Controller
 
     public function documents()
     {
-        return view('panel.documents');
+        $documents = Document::where('user_id', Auth::id())->first();
+        return view('panel.documents', compact('documents'));
     }
 
 }
